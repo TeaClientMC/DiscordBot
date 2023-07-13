@@ -6,24 +6,26 @@ const {
   ActionRowBuilder,
 } = require("discord.js"); //import stuff from discord.js
 const mcSchema = require("../../schemas/mcstatusschema"); //import the schema file
-const fetch = require("node-fetch"); //importing node fetch
+const fetch = require('node-fetch')//importing node fetch
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("serverinfoMC") //command name
+    .setName("serverinfomc") //command name
     .setDescription("Displays server info about the server.") //command description
-    .addStringOption((str) =>
-      str //adding the ip option
+    .addStringOption((option) =>
+      option //adding the ip option
         .setName("ip") //name of the ip option
         .setDescription("The ip of the server you want to see the status of.") //description of the ip option
         .setRequired(true)
     ), //setting this option as required so the user cant just skip it
   async execute(interaction) {
+    
     const ipop = interaction.options.getString("ip"); //getting the value of the ip option that has been entered by the user
     const data = await mcSchema.findOne({
       UserID: interaction.user.id,
       Guild: interaction.guild.id,
     }); //find data in the database
+
     if (data) {
       //if data already exists: overwrite data with new data
       await mcSchema.findOneAndDelete({
@@ -87,7 +89,7 @@ module.exports = {
                 }
               )
               .setTimestamp() //make a little timestamp that the bottom of our embed
-              .setColor("Green"); //set the embed color to green
+              .setColor("Aqua"); //set the embed color to green
             const row = new ActionRowBuilder().addComponents(button); // creating a new row so the button can be sent
             interaction.reply({ embeds: [embed], components: [row] });
           } //sending the embed and the button
