@@ -1,7 +1,6 @@
 discloud.config
 config.json
-<<<<<<< HEAD
 .env 
-=======
 node_modules
->>>>>>> 2fcb0810bbddbf9cc8c5c2289f26188881cc39ba
+
+

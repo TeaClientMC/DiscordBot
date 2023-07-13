@@ -1,11 +1,11 @@
-const mcSchema = require("./schemas/mcstatusschema.js"); //importing the schema
+const mcSchema = require("../../schemas/mcstatusschema"); //importing the schema
 const {
   ButtonBuilder,
   ButtonStyle,
   EmbedBuilder,
   ActionRowBuilder,
 } = require("discord.js"); //importing from discord.js
-client.on(Events.InteractionCreate, async (interaction) => {
+async (interaction) => {
   if (!interaction.isButton()) return; //if the interaction isnt a button: return
   if (interaction.customId === "mc-refresh") {
     //if the interaction id, matches the one of the buttont we mad earlier
@@ -64,4 +64,4 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
     initServerData(data.ip); //calling the function
   }
-});
+};

@@ -10,7 +10,7 @@ const fetch = require("node-fetch"); //importing node fetch
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("mc-server-info") //command name
+    .setName("serverinfoMC") //command name
     .setDescription("Displays server info about the server.") //command description
     .addStringOption((str) =>
       str //adding the ip option
