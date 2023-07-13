@@ -1,0 +1,11 @@
+// make sure to delete esample on the end to make this file valid and this text.
+// and also make sure to change to config,json once done
+{
+ "token": "Paste token here",
+ "mongodb": "Paste Url here",
+ "devId1": "Pate your user id using discord dev",
+ "devId2": "Second Id that you can add you can continue on"
+ "helper_roleid": "Paste your helper role here",
+ "mod_roleid": "Paste your moderating role here",
+ "info_channelId": "Paste your info channel here"
+}
