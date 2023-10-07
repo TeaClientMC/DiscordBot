@@ -2,20 +2,21 @@ name: Format
 on:
   push:
     branches:
-      - 'main'
+      - "main"
 jobs:
   format:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
+          token: ${{ secrets.WORKFLOW_TOKEN }}
           ref: ${{ github.head_ref }}
       - uses: oven-sh/setup-bun@v1
         with:
-          version: 1.0.0
-      - run: bunx format 
+          bun-version: 1.0.0
+      - run: bun format
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Apply formatting changes
           branch: ${{ github.head_ref }}
