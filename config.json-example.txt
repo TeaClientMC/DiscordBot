@@ -1,8 +1,0 @@
-// make sure to delete esample on the end to make this file valid and this text.
-// and also make sure to change to config,json once done
-{
-    "token": "",
-    "mongodb": "",
-    "OwnerId":  "639720838635061248",
-    "devID1": "639720838635061248"
-}
