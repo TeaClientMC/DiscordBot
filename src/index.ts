@@ -8,6 +8,8 @@ import {
 } from "discord.js";
 import { Routes } from "discord-api-types/v10";
 import fs from "fs";
+import figlet from 'figlet';
+import chalk from 'chalk';
 import handleEvents from "./functions/handleEvents";
 import handleCommands from "./functions/handleCommands";
 import { join, resolve } from "path";
@@ -50,7 +52,16 @@ client.once("ready", async () => {
   await client.handleCommands();
   await client.handleEvents();
 
-  console.log("yay");
+  figlet.text(client.user?.username ?? 'Bot', function(err: Error | null, data: string | undefined) {
+    if (err) {
+      console.log('Something went wrong...');
+      console.dir(err);
+      return;
+    }
+    console.log(chalk.white(data));
+  });
+
+
   console.log(`Logined to ${client.user?.username}`);
 });
 

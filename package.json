@@ -3,6 +3,7 @@
   "module": "src/index.ts",
   "devDependencies": {
     "@types/common-tags": "^1.8.3",
+    "@types/figlet": "^1.5.7",
     "bun-types": "latest"
   },
   "scripts": {

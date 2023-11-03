@@ -6,6 +6,7 @@ export default {
     .setName("reload")
     .setDescription("reloads your events and commands"),
 
+
   async execute(interaction: ChatInputCommandInteraction, client: MyClient) {
     const embed = new EmbedBuilder()
       .setColor(Colors.Grey)
