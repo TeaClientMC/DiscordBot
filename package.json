@@ -4,21 +4,30 @@
   "devDependencies": {
     "@types/common-tags": "^1.8.3",
     "@types/figlet": "^1.5.7",
-    "bun-types": "latest"
+    "@types/gradient-string": "^1.1.4",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.19.13"
   },
   "scripts": {
     "start": "bun run src/index.ts",
     "watch": "bun run --watch src/index.ts",
-    "hot": "bun run --watch src/index.ts"
+    "prisma": "prisma"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@prisma/client": "5.5.2",
+    "ascii-table3": "^0.9.0",
     "chalk": "^5.3.0",
     "common-tags": "^1.8.2",
     "discord-api-types": "^0.37.62",
     "discord.js": "^14.13.0",
-    "figlet": "^1.7.0"
+    "drizzle": "^1.4.0",
+    "drizzle-orm": "^0.28.6",
+    "figlet": "^1.7.0",
+    "gradient-string": "^2.0.2",
+    "postgres": "^3.4.3",
+    "prisma": "^5.5.2"
   }
 }

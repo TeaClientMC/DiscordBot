@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id String @id @default(uuid())
+  discordId String
+  usernames String
+  punishments Punishment[]
+  breaks Break[] 
+}
+
+
+
+model Punishment {
+  id        String   @id @default(uuid())
+  type      String   // Type of punishment (warn, mute, timeout, ban)
+  content   String   // Content or reason for the punishment
+  issuer    String   // The issuer of the punishment
+  userId    String   // The ID of the user who received the punishment
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Break {
+  id           String   @id @default(uuid())
+  userId       String   // The ID of the user who is on break
+  lastUsername String   // The last username of the user who is on break
+  startTime    DateTime // The time when the break started
+  endTime      DateTime? // The time when the break ended
+  user         User     @relation(fields: [userId], references: [id])
+}
+
+

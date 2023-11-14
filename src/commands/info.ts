@@ -95,16 +95,16 @@ export default {
           });
 
           const embed = new EmbedBuilder()
-            .setTitle(`**Cordevall Bot Commands**`)
-            .setColor(0xffff00)
+            .setTitle(`**TeaClient Commands**`)
+            .setColor(Colors.White)
             .setFooter({
-              text: "Cordevall - https://github.com/Cordevall",
+              text: "TeaClient - https://teaclient.net",
               iconURL: "https://avatars.githubusercontent.com/u/143160364?s=200&v=4"
             })
             .setDescription(`
 
               **Commands**
-              ${commands}
+              > ${commands}
             `);
 
           interaction.reply({ embeds: [embed], ephemeral: true });
